@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chat-container" style="overflow: auto; max-height: 80vh">
+    <div class="table-responsive">
+        <table class="table" id="reminderss">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Start time</th>
+                <th scope="col">End Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reminders in reminders %}
+            <tr id={{ reminders.id }}>
+                <td> {{reminders.title }} </td>
+                <th scope="row">{{ reminders.reminders}}</th>
+                <td> {{reminders.description }} </td>
+                <td> {{ reminders.start_time }} </td>
+                <td> {{ reminders.end_time }} </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

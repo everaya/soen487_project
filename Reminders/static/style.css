@@ -1,0 +1,72 @@
+body,html {
+    height: 100%;
+    color: white;
+    background: black;
+    overflow: hidden;
+
+}
+
+.header{
+    font-size: 50px;
+    font-family: Georgia, serif;
+    margin-top: 2%;
+    margin-left: 75%;
+
+}
+
+.header2{
+    font-size: 35px;
+    font-family: Georgia, serif;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-left: -60%;
+
+}
+
+.container{
+    text-align: center;
+    margin-left: -12%;
+}
+
+.table-responsive{
+    text-align: center;
+    margin-left: 90%;
+    margin-bottom: 100%;
+    margin-top: -40%;
+
+}
+
+
+.chat-container {
+    margin: 0px;
+    padding: px;
+}
+
+.chat-message {
+    padding: 6px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+
+
+.btn-primary {
+    color: black;
+    background-color: limegreen;
+    border-color: black;
+}
+
+a {
+    color: darkgreen;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: limegreen;
+}
+

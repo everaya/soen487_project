@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="header">
+    <header > Reminders  </header>
+</div>
+<form method="POST" id="target">
+<div class="form-group ">
+    <form role="form" data-toggle="validator">
+        <div class="row">
+            <div class="form-group col-xs-5 col-lg-5">
+                <input type="text" class="form-control"  name="title" placeholder="Title"/>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5 col-lg-5 ">
+                <input
+                        type="text"
+                        class="form-control datetime"
+                        name="start_time"
+                        placeholder="Start time"
+                        required="required"
+                >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5 col-lg-5">
+                <input
+                        type="text"
+                        class="form-control datetime"
+                        name="end_time"
+                        placeholder="End time"
+                        required="required"
+                >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-5 col-lg-5">
+                <input type="text" class="form-control"  name="email" placeholder="email@gmail.com" required="required"/>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-4 col-lg-7">
+                <input type="text" class="form-control" name="description" placeholder="Description"/>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary col-xs-5 col-lg-2">Submit</button>
+    </form>
+</div>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover" id="reminders">
+        <thead>
+        <tr>
+            <th scope="col" >Title</th>
+            <th scope="col">Description</th>
+            <th scope="col" >Start time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+
+        </tr>
+        </thead>
+        <tbody  >
+        {% for reminders in reminders %}
+        <tr id={{ reminders.id }}>
+            <td> {{reminders.title }} </td>
+            <td> {{reminders.description }} </td>
+            <td> {{ reminders.start_time }} </td>
+            <td> {{ reminders.end_time}} </td>
+            <td> <a href="/edit/{{ reminders.id }}">Edit</a> </td>
+            <td> <a href="/delete/{{ reminders.id }}" method="GET">Delete</a> </td>
+
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

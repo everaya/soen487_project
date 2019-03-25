@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header2">
+    <header > Update Reminder  </header>
+</div>
+<form method="POST" id="target">
+    <div class="form-group ">
+        <form role="form" data-toggle="validator">
+            <div class="row">
+                <div class="form-group col-xs-5 col-lg-5">
+                    <input type="text" class="form-control"  name="title" placeholder="Title"/>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-5 col-lg-5 ">
+                    <input
+                            type="text"
+                            class="form-control datetime"
+                            name="start_time"
+                            placeholder="Start time"
+                            required="required"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-5 col-lg-5">
+                    <input
+                            type="text"
+                            class="form-control datetime"
+                            name="end_time"
+                            placeholder="End time"
+                            required="required"
+                    >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-5 col-lg-5">
+                    <input type="text" class="form-control"  name="email" placeholder="email@gmail.com" required="required"/>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-5 col-lg-10">
+                    <input type="text" class="form-control" name="description" placeholder="Description"/>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-block btn-primary col-xs-5 col-lg-2">Submit</button>
+        </form>
+{% endblock %}

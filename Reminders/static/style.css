@@ -1,14 +1,13 @@
 body,html {
     height: 100%;
-    color: white;
-    background: black;
+    color: black;
+    background: white;
     overflow: hidden;
 
 }
 
 .header{
     font-size: 50px;
-    font-family: Georgia, serif;
     margin-top: 2%;
     margin-left: 75%;
 
@@ -51,22 +50,52 @@ body,html {
 
 .btn-primary {
     color: black;
-    background-color: limegreen;
+    background-color: deepskyblue;
     border-color: black;
 }
 
 a {
-    color: darkgreen;
+    color: blue;
     text-decoration: none;
     background-color: transparent;
 }
 
 
 
-table {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 2px;
-    border-color: limegreen;
+
+#myInput {
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
 
+#reminders {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#reminders tr.header, #reminders tr:hover {
+    background-color: #f1f1f1;
+}
+
+.carousel-item {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    height: 100%;
+    margin-bottom: 60px;
+}
+
+.carousel,
+.active {
+    height: 100%;
+    margin-bottom: 60px;
+}

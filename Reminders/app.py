@@ -1,4 +1,4 @@
-from flask import Flask, request,  render_template, redirect
+from flask import Flask, request, render_template, redirect
 import pusher
 import models
 from database import db_session
@@ -22,8 +22,7 @@ def shutdown_session(exception=None):
 
 @app.route('/')
 def index():
-    reminders = models.Reminders.query.all()
-    return render_template('reminders_page.html', reminders=reminders)
+    return render_template('home.html')
 
 
 @app.route('/reminders_page', methods=["POST", "GET"])
@@ -35,7 +34,7 @@ def reminders_page():
         start_time = datetime.strptime(request.form['start_time'], '%d-%m-%Y %H:%M %p')
         end_time = datetime.strptime(request.form['end_time'], '%d-%m-%Y %H:%M %p')
 
-        new_reminder = models.Reminders(title, description, end_time, start_time,email)
+        new_reminder = models.Reminders(title, description, end_time, start_time)
         db_session.add(new_reminder)
         db_session.commit()
 
@@ -87,7 +86,7 @@ def update_record(id):
         return redirect("/reminders_page", code=302)
     else:
         new_reminder = models.Reminders.query.get(id)
-        new_reminder.start_time = new_reminder.start_time.strftime("%d-%m-%Y %H:%M %p")
+        new_reminder.start_time= new_reminder.start_time.strftime("%d-%m-%Y %H:%M %p")
         new_reminder.end_time = new_reminder.end_time.strftime("%d-%m-%Y %H:%M %p")
 
         return render_template('update_reminders.html', data=new_reminder)
